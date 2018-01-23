@@ -11,6 +11,8 @@ class App extends React.Component {
     state = {
         temperature: undefined,
         city: undefined,
+        max: undefined,
+        min: undefined,
         country: undefined,
         humidity: undefined,
         description: undefined,
@@ -26,6 +28,8 @@ class App extends React.Component {
             console.log(data)
             this.setState({
                 temperature: data.main.temp,
+                max: data.main.temp_max,
+                min: data.main.temp_min,
                 city: data.name,
                 country: data.sys.country,
                 humidity: data.main.humidity,
@@ -35,6 +39,8 @@ class App extends React.Component {
         } else {
            this.setState({
                temperature: undefined,
+               max: undefined,
+               min: undefined,
                city: undefined,
                country: undefined,
                humidity: undefined,
@@ -50,6 +56,8 @@ class App extends React.Component {
                 <Form getWeather={this.getWeather}/>
                 <Weather 
                     temperature={this.state.temperature}
+                    max={this.state.max}
+                    min={this.state.min}
                     city={this.state.city}
                     country={this.state.country}
                     humidity={this.state.humidity}
