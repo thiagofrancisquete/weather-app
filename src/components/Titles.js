@@ -8,3 +8,4 @@ const Titles = () =>(
 )
 
 export default Titles;
+console.log('porra mas que merda')
